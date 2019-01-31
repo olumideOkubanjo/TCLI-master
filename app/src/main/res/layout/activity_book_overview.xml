@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:background="#a17bbc"
+        android:layout_height="match_parent"
+        tools:context=".BookOverview">
+
+
+    <TextView
+            android:layout_width="match_parent"
+            android:id="@+id/book_chosen_title"
+            android:text="Title"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="#ad88b9"
+            android:layout_height="wrap_content" android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true" android:layout_marginTop="9dp" android:layout_marginStart="0dp"/>
+
+    <ImageView android:layout_width="wrap_content"
+               android:id="@+id/book_cover_Image"
+               android:scaleType="centerCrop"
+               android:layout_gravity="center"
+               android:adjustViewBounds="true"
+               android:background="@drawable/loading_icon"
+               android:layout_height="279dp" android:layout_alignParentEnd="true" android:layout_alignParentTop="true"
+               android:layout_marginTop="88dp" android:layout_marginEnd="79dp" android:layout_alignParentStart="true"
+               android:layout_marginStart="71dp"/>
+    <ScrollView
+            android:layout_width="308dp"
+            android:layout_height="217dp" android:layout_alignParentStart="true"
+            android:layout_marginStart="33dp" android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp" android:layout_marginTop="17dp"
+            android:layout_below="@+id/book_cover_Image">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:orientation="vertical">
+            <TextView
+                    android:text="TextView"
+                    android:layout_marginTop="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/author_full"/>
+            <TextView
+                    android:text="TextView"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="20dp"
+                    android:layout_height="wrap_content" android:id="@+id/description_full"/>
+            <Button
+                    android:text="Sign Book and Start Reading"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="40dp"
+                    android:layout_height="wrap_content" android:id="@+id/sign_out_begin_reading_btn"/>
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</RelativeLayout>

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "337771331489",
+    "firebase_url": "https://tcli-d5182.firebaseio.com",
+    "project_id": "tcli-d5182",
+    "storage_bucket": "tcli-d5182.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:337771331489:android:87f76fc71d9cdde2",
+        "android_client_info": {
+          "package_name": "ng.com.tcli.www.tcli"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "337771331489-k2cocr1fhebi7bhhn96qn6h7l028asmo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxG9QWVSWXWVRayVCignjTFp9AY33NPzQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

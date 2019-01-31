@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TCLI</string>
+    <string name="title_activity_home_page">HomePage</string>
+    <string name="title_activity_sign_up">SignUpActivity</string>
+    <string name="title_activity_book_overview">BookOverview</string>
+    <string name="navigation_drawer_open">Open Navigation Drawer</string>
+    <string name="navigation_drawer_close">Close Navigation Drawer</string>
+</resources>

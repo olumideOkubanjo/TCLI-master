@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+        <ImageView
+                android:layout_width="205dp"
+                android:layout_height="171dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/logo" android:contentDescription="Background Image"
+                tools:ignore="HardcodedText"/>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/colorPrimaryDark">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:orientation="vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp" tools:background="@color/colorPrimaryDark">
+
+
+            <EditText
+                    android:id="@+id/user_full_name_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:hint="Full Name"
+                    android:inputType="text"
+                    android:paddingBottom="15dp"
+                    android:textColorHint="@color/colorAccent" tools:ignore="HardcodedText"
+                    android:autofillHints="Email"/>
+
+            <EditText
+                    android:id="@+id/user_email_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress"
+                    android:paddingBottom="15dp"
+                    android:textColorHint="@color/colorAccent" tools:ignore="HardcodedText"
+                    android:autofillHints="email"/>
+            <EditText
+                    android:id="@+id/user_password_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:inputType="textPassword"
+                    android:paddingBottom="15dp"
+                    android:textColorHint="@color/colorAccent" android:hint="Password" tools:ignore="HardcodedText"
+                    android:autofillHints="password"/>
+
+            <EditText
+                    android:id="@+id/user_verify_password_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:inputType="textPassword"
+                    android:paddingBottom="15dp"
+                    android:textColorHint="@color/colorAccent" android:hint="Verify Password"
+                    tools:ignore="HardcodedText"
+                    android:autofillHints="password"/>
+            <Button
+                    android:id="@+id/button_sign_up"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="7dp"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorAccent"
+                    tools:background="@color/colorPrimary" android:text="SignUp"
+                    android:background="@color/colorPrimary"/>
+
+            <TextView
+                    android:id="@+id/login_button_switch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:text="Already have an Account? Log In"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/colorAccent" tools:ignore="HardcodedText"/>
+
+
+        </LinearLayout>
+
+        <ProgressBar
+                android:id="@+id/progressbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:visibility="gone"/>
+    </RelativeLayout>
+
+
+</LinearLayout>

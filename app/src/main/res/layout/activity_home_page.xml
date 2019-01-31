@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".HomePage">
+
+    <TextView
+            android:text="Show User's Name"
+            android:layout_width="500dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true" android:id="@+id/user_welcome_text"
+            android:layout_marginTop="4dp"
+            android:gravity="center" android:background="@color/colorPrimaryDark"
+            android:textColor="@color/common_google_signin_btn_text_dark_default" android:textSize="20dp"
+            android:layout_alignParentStart="true" android:layout_marginStart="0dp"/>
+    <TextView
+            android:text="Books Available"
+            android:layout_width="500dp"
+            android:layout_height="50dp"
+            android:id="@+id/books_available_header" android:layout_marginTop="2dp"
+            android:layout_below="@+id/user_welcome_text"
+            android:gravity="center" android:layout_alignParentStart="true" android:layout_marginStart="0dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:visibility="visible" android:background="@color/colorPrimary"
+            android:drawableBottom="@color/colorAccent"/>
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:orientation="vertical"
+                  android:layout_height="match_parent" android:layout_alignParentStart="true"
+                  android:layout_below="@+id/books_available_header">
+
+        <!--Recycler View-->
+        <android.support.v7.widget.RecyclerView android:layout_width="match_parent"
+                                                android:id="@+id/recycler_view"
+                                                android:layout_height="match_parent">
+
+        </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+
+
+</RelativeLayout>
