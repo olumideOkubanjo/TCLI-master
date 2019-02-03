@@ -10,6 +10,7 @@ import android.widget.TextView
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_home_page.*
@@ -22,6 +23,8 @@ import java.lang.Exception
 
 class BookOverview : AppCompatActivity() {
     lateinit var bookId:String
+    lateinit var userDbRef : DatabaseReference
+    var usersAuth = FirebaseAuth.getInstance().currentUser
 
     lateinit var mBooksDB: DatabaseReference
 
@@ -40,6 +43,7 @@ class BookOverview : AppCompatActivity() {
         val bookChosenButton = findViewById<View>(R.id.sign_out_begin_reading_btn) as Button
 
         mBooksDB = FirebaseDatabase.getInstance().getReference("Books").child(bookId)
+        userDbRef = FirebaseDatabase.getInstance().getReference("Users").child(usersAuth!!.uid)
 
         //Set title
         mBooksDB.addValueEventListener(object: ValueEventListener{
@@ -62,6 +66,9 @@ class BookOverview : AppCompatActivity() {
 
                 //Set Button to Open a new Page and save the book Location id
                 bookChosenButton.setOnClickListener {
+
+                    // Attaching the book to the user's name
+
 
                     //Saving the Book PDF Location to the temp file
                     applicationContext.openFileOutput("temp.txt", Context.MODE_PRIVATE).use {
