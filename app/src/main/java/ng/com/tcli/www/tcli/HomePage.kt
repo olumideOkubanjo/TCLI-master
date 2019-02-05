@@ -50,7 +50,7 @@ class HomePage : AppCompatActivity(){
             }
 
             override fun onChildChanged(p0: DataSnapshot, p1: String?) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+                //
             }
 
             override fun onChildAdded(snapshot: DataSnapshot, p1: String?) {

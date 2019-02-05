@@ -67,12 +67,18 @@ class BookOverview : AppCompatActivity() {
                 //Set Button to Open a new Page and save the book Location id
                 bookChosenButton.setOnClickListener {
 
-                    // Attaching the book to the user's name
+
 
 
                     //Saving the Book PDF Location to the temp file
                     applicationContext.openFileOutput("temp.txt", Context.MODE_PRIVATE).use {
                         it.write(snapshot.child("book").getValue().toString().toByteArray())
+
+                        // Attaching the book to the user's name
+                        var tempBookSignedId = snapshot.child("book").getValue() as String
+                        var tempNameBookSigned =  snapshot.child("title").getValue().toString()
+
+                        userDbRef.child("Book").setValue(tempNameBookSigned)
                     }
 
                     //Starting the PDF View Activity for the ebook

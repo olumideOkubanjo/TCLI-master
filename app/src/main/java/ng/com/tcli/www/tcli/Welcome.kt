@@ -91,8 +91,10 @@ class Welcome : AppCompatActivity(), NavigationView.OnNavigationItemSelectedList
                 TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
             }
 
-            override fun onChildChanged(p0: DataSnapshot, p1: String?) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            override fun onChildChanged(snapshot: DataSnapshot, p1: String?) {
+
+                // Temp Filler
+
             }
 
             override fun onChildAdded(snapshot: DataSnapshot, p1: String?) {
