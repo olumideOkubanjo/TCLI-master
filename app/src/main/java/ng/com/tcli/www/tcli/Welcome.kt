@@ -1,12 +1,12 @@
 package ng.com.tcli.www.tcli
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.ActionBarDrawerToggle
+import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
 import android.view.View
 import android.widget.ImageView
@@ -14,8 +14,8 @@ import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-import kotlinx.android.synthetic.main.activity_welcome.*
 import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.activity_welcome.*
 
 class Welcome : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     lateinit var userDbRef : DatabaseReference
@@ -41,6 +41,14 @@ class Welcome : AppCompatActivity(), NavigationView.OnNavigationItemSelectedList
 
             item.itemId==R.id.nav_booksAvailable ->
                 startActivity(Intent(this,HomePage::class.java))
+            item.itemId==R.id.nav_admin -> {
+                if (usersAuth!!.uid == "F84FjJVTW2Tx8ZFbc95bWVF9yvy2") {
+                    Toast.makeText(this,"Admin Access Granted", Toast.LENGTH_LONG).show()
+                    startActivity(Intent(this, Admin::class.java))
+                }else{
+                    Toast.makeText(this,"Admin Access Denied", Toast.LENGTH_LONG).show()
+                }
+            }
         }
 
         drawer.closeDrawer(GravityCompat.START)
@@ -102,11 +110,11 @@ class Welcome : AppCompatActivity(), NavigationView.OnNavigationItemSelectedList
                     //set User Full Name
                     snapshot.key.toString().equals("Name") ->
                         //Set User Profile Picture
-                        userNavName.text = snapshot.getValue().toString()
+                        userNavName.text = snapshot.value.toString()
                     snapshot.key.toString().equals("picture")->
-                        Picasso.get().load(snapshot.getValue().toString()).fit().into(userNavPicture)
+                        Picasso.get().load(snapshot.value.toString()).fit().into(userNavPicture)
                     snapshot.key.toString().equals("Email")->
-                        userNavEmail.text = snapshot.getValue().toString()
+                        userNavEmail.text = snapshot.value.toString()
                 }
             }
 

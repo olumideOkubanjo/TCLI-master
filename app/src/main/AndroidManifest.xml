@@ -13,6 +13,8 @@
             android:roundIcon="@drawable/logo"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".Admin">
+        </activity>
         <activity android:name=".Settings">
         </activity>
         <activity android:name=".Share">

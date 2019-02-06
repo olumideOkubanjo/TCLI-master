@@ -3,21 +3,15 @@ package ng.com.tcli.www.tcli
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.os.Environment
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log
-import android.widget.TextView
+import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.activity_home_page.*
 import java.io.File
-import java.io.FileReader
-import java.io.FileWriter
-import java.lang.Exception
 
 //Thiis the real one my G
 
@@ -53,31 +47,29 @@ class BookOverview : AppCompatActivity() {
 
             override fun onDataChange(snapshot: DataSnapshot) {
                 //Set title
-                bookChosenTitle.text = snapshot.child("title").getValue().toString()
+                bookChosenTitle.text = snapshot.child("title").value.toString()
 
                 //Setting image
-                Picasso.get().load(snapshot.child("image").getValue().toString()).fit().into(bookChosenImage)
+                Picasso.get().load(snapshot.child("image").value.toString()).fit().into(bookChosenImage)
 
                 //Set author
-                bookChosenAuthor.text = "Author: " + snapshot.child("author").getValue().toString()
+                bookChosenAuthor.text = "Author: " + snapshot.child("author").value.toString()
 
                 //Set Description
-                bookChosenDescription.text = "Description: " + snapshot.child("description").getValue().toString()
+                bookChosenDescription.text = "Description: " + snapshot.child("description").value.toString()
 
                 //Set Button to Open a new Page and save the book Location id
                 bookChosenButton.setOnClickListener {
 
-
-
-
                     //Saving the Book PDF Location to the temp file
                     applicationContext.openFileOutput("temp.txt", Context.MODE_PRIVATE).use {
-                        it.write(snapshot.child("book").getValue().toString().toByteArray())
+                        it.write(snapshot.child("book").value.toString().toByteArray())
 
                         // Attaching the book to the user's name
-                        var tempBookSignedId = snapshot.child("book").getValue() as String
-                        var tempNameBookSigned =  snapshot.child("title").getValue().toString()
+                        var tempBookSignedLocation = snapshot.child("book").value as String
+                        var tempNameBookSigned =  snapshot.child("title").value.toString()
                         userDbRef.child("Book").setValue(tempNameBookSigned)
+                        userDbRef.child("BookLocation").setValue(tempBookSignedLocation)
                     }
 
                     //Starting the PDF View Activity for the ebook
