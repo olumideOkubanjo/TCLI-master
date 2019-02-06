@@ -111,7 +111,7 @@ class Welcome : AppCompatActivity(), NavigationView.OnNavigationItemSelectedList
             }
 
             override fun onChildRemoved(p0: DataSnapshot) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+                // 
             }
         })
 

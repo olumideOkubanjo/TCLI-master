@@ -77,7 +77,6 @@ class BookOverview : AppCompatActivity() {
                         // Attaching the book to the user's name
                         var tempBookSignedId = snapshot.child("book").getValue() as String
                         var tempNameBookSigned =  snapshot.child("title").getValue().toString()
-
                         userDbRef.child("Book").setValue(tempNameBookSigned)
                     }
 

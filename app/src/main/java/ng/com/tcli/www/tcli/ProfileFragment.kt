@@ -1,5 +1,8 @@
 package ng.com.tcli.www.tcli
 
+import android.content.Context
+import android.content.DialogInterface
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
@@ -12,6 +15,12 @@ import com.google.firebase.database.*
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_profile.view.*
 import kotlinx.android.synthetic.main.nav_header.view.*
+
+
+
+
+
+
 
 class ProfileFragment: Fragment() {
     lateinit var userDbRef : DatabaseReference
@@ -33,7 +42,12 @@ class ProfileFragment: Fragment() {
         userDbRef = FirebaseDatabase.getInstance().getReference("Users").child(userId)
 
 
-        userDbRef.addChildEventListener(object: ChildEventListener{
+        userDbRef.addChildEventListener(object: ChildEventListener, View.OnClickListener {
+            override fun onClick(v: View?) {
+                //Add an On click method
+
+            }
+
             override fun onCancelled(p0: DatabaseError) {
                 //
             }
@@ -67,8 +81,10 @@ class ProfileFragment: Fragment() {
                     snapshot.key.toString().equals("phone")->
                         view.user_phoneNumber.text = snapshot.getValue().toString()
                     //Set Name/id of current book and add an onclick listener to it(Create that temp file to open the book in pdf view)
-                    snapshot.key.toString().equals("Book")->
+                    snapshot.key.toString().equals("Book")->{
                         view.user_currentBook.text = "Continue : " + snapshot.getValue().toString()
+                        view.currentBookBlock.setOnClickListener(this)
+                    }
                     //Set Achievements(Not sure what that is yet)
                 }
             }
@@ -76,8 +92,9 @@ class ProfileFragment: Fragment() {
             override fun onChildRemoved(p0: DataSnapshot) {
                 TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
             }
-        })
 
+
+        })
 
         return view
     }
