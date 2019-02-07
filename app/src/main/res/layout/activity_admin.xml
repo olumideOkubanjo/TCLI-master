@@ -1,16 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".Admin">
-
-
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#BEAEE4"
+                android:padding="16dp"
+                tools:context=".Admin">
     <TextView
-            android:text="ADMIN"
-            android:layout_width="360dp"
+            android:layout_width="395dp"
+            android:id="@+id/cam_upload_text"
+            android:layout_height="73dp"
+            android:gravity="center"
+            android:background="#936dc6"
+            android:text="UPLOAD NEW BOOK"
+            android:textSize="30sp"/>
+    <Button
+            android:id="@+id/button_choose_image"
+            android:layout_width="126dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Choose Image Cover" android:layout_marginStart="0dp" android:layout_marginTop="83dp"/>
 
-            android:layout_height="290dp"/>
+    <Button
+            android:id="@+id/button_choose_book"
+            android:layout_width="251dp"
+            android:layout_height="68dp"
+            android:gravity="center"
+            android:text="Choose Image PDF" android:layout_marginStart="0dp" android:layout_marginTop="500dp"/>
+    <EditText
+            android:id="@+id/bookName_edit_text"
+            android:layout_width="218dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_alignTop="@+id/cam_upload_text"
+            android:layout_toEndOf="@+id/button_choose_image"
+            android:hint="Enter BookName name" android:layout_marginTop="90dp"/>
+
+    <ImageView
+            android:id="@+id/book_image_cover"
+            android:src="@drawable/logo"
+            android:layout_width="wrap_content"
+            android:layout_height="355dp"
+            android:layout_above="@id/progress_bar"
+            android:layout_below="@id/bookName_edit_text"
+            android:layout_marginTop="20dp" android:layout_marginBottom="99dp"/>
+    <ImageView
+            android:id="@+id/pdf_viewConformation"
+            android:src="@drawable/ic_pdfcheck"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginLeft="20sp"
+            android:layout_marginStart="275sp" android:layout_marginTop="500sp" android:layout_marginBottom="20sp"/>
+
+    <ProgressBar
+            android:id="@+id/progress_bar"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="395dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/button_upload"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="6dp" android:layout_marginStart="0dp"/>
+
+    <Button
+            android:id="@+id/button_upload"
+            android:layout_width="367dp"
+            android:layout_height="95dp"
+            android:layout_alignParentBottom="true"
+            android:text="Upload Book Cover and PDf" android:layout_marginBottom="14dp"/>
+
 </RelativeLayout>
