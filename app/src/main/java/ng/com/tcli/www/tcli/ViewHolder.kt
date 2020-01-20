@@ -2,6 +2,7 @@ package ng.com.tcli.www.tcli
 
 import android.content.Context
 import android.content.Intent
+import android.content.Intent.FLAG_ACTIVITY_NEW_TASK
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.*
@@ -65,7 +66,7 @@ class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
             })
 
 
-            ctx.startActivity(Intent(ctx,BookOverview::class.java))
+            ctx.startActivity(Intent(ctx,BookOverview::class.java).setFlags(FLAG_ACTIVITY_NEW_TASK))
         }
 
 

@@ -78,6 +78,8 @@ class Welcome : AppCompatActivity(), NavigationView.OnNavigationItemSelectedList
             navigationView.setCheckedItem(R.id.nav_home)
             //Open a fragment here
             //Because I already use the welcome page, there's no need to load a fragment
+//            supportFragmentManager.beginTransaction().replace(R.id.fragment_container,ProfileFragment()).commit()
+
         }
 
 

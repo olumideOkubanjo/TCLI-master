@@ -17,7 +17,7 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
-@Suppress("ASSIGNED_BUT_NEVER_ACCESSED_VARIABLE")
+
 class HomePage : AppCompatActivity(){
 
     lateinit var mRecyclerView: RecyclerView

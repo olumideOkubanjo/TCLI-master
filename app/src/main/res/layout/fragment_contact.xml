@@ -6,10 +6,10 @@
               android:background="#EEAFF8"
               android:layout_height="match_parent"
               android:orientation="vertical">
-    <TextView android:layout_width="287dp"
-              android:text="Contact"
+    <TextView android:layout_width="380dp"
+              android:text="Coming Soon"
               android:layout_gravity="center"
               android:textSize="70dp"
-              android:layout_height="252dp"/>
+              android:layout_height="232dp"/>
 
 </RelativeLayout>

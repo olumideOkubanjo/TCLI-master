@@ -8,7 +8,7 @@
         tools:context=".Share">
 
     <TextView android:layout_width="287dp"
-              android:text="Share"
+              android:text="Coming Soon"
               android:layout_gravity="center"
               android:textSize="70dp"
               android:layout_height="252dp"/>

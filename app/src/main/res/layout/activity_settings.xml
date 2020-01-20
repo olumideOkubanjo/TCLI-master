@@ -7,7 +7,7 @@
         android:layout_height="match_parent"
         tools:context=".Settings">
     <TextView android:layout_width="287dp"
-              android:text="Settings"
+              android:text="Coming Soon"
               android:layout_gravity="center"
               android:textSize="70dp"
               android:layout_height="252dp"/>

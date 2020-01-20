@@ -7,6 +7,12 @@
                 android:background="#BEAEE4"
                 android:padding="16dp"
                 tools:context=".Admin">
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:orientation="vertical"/>
+    </ScrollView>
     <TextView
             android:layout_width="395dp"
             android:id="@+id/cam_upload_text"
@@ -27,7 +33,7 @@
             android:layout_width="251dp"
             android:layout_height="68dp"
             android:gravity="center"
-            android:text="Choose Image PDF" android:layout_marginStart="0dp" android:layout_marginTop="500dp"/>
+            android:text="Choose Book PDF" android:layout_marginStart="0dp" android:layout_marginTop="500dp"/>
     <EditText
             android:id="@+id/bookName_edit_text"
             android:layout_width="218dp"
